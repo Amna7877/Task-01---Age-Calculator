@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <title>Cozy Age — Aesthetic Anime Pink Age Calculator</title>
 
   <!-- Google fonts -->
@@ -11,7 +11,7 @@
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+  <!-- Bootstrap Icons (ALL EMOJIS REPLACED WITH ICONS) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- SweetAlert2 -->
@@ -295,12 +295,15 @@
       justify-content:space-between;
       padding:10px 12px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
     
     .brand{
       display:flex;
       align-items:center;
       gap:15px;
+      flex-wrap: wrap;
     }
     
     .brand .logo-pill{
@@ -327,7 +330,7 @@
 
     .devices {
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
       gap:20px;
       padding:10px 6px;
     }
@@ -394,6 +397,7 @@
       gap:15px;
       z-index: 1;
       position: relative;
+      flex-wrap: wrap;
     }
     
     .profile-head .name{
@@ -530,10 +534,11 @@
       display:flex;
       gap:12px;
       margin-top:12px;
+      flex-wrap: wrap;
     }
     
     .badge{
-      flex:1;
+      flex:1 1 100px;
       background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,245,252,0.95));
       padding:16px;
       border-radius:16px;
@@ -588,6 +593,8 @@
       justify-content:space-between;
       padding:10px 0;
       border-bottom:1px dashed rgba(255,155,207,0.2);
+      flex-wrap: wrap;
+      gap: 10px;
     }
     
     .analytics .row:last-child{
@@ -606,6 +613,7 @@
       gap:12px;
       align-items:center;
       margin-top:18px;
+      flex-wrap: wrap;
     }
     
     .next-pill{
@@ -617,6 +625,7 @@
       border:2px solid rgba(255,155,207,0.2);
       box-shadow:0 8px 20px rgba(255,120,180,0.06);
       transition: all 0.3s ease;
+      flex: 1 1 auto;
     }
     
     .next-pill:hover {
@@ -674,15 +683,15 @@
       transform: translateY(-3px);
     }
 
-    /* ZODIAC DISPLAY IN NOTEBOOK - CRITICAL FIX */
+    /* ZODIAC DISPLAY IN NOTEBOOK */
     .zodiac-display-box {
+      margin-left: 10px;
       background:linear-gradient(135deg, rgba(255,182,217,0.2), rgba(255,155,207,0.15));
       padding:10px;
       border-radius:14px;
       border:2px solid rgba(255,155,207,0.25);
       box-shadow:0 8px 20px rgba(255,120,180,0.1);
-      min-width:120px;
-      max-width:150px;
+      min-width:80px;
       text-align:center;
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -852,6 +861,7 @@
       gap: 12px;
       justify-content: center;
       margin-top: 20px;
+      flex-wrap: wrap;
     }
     
     .player-controls .btn {
@@ -900,6 +910,7 @@
       border:2px solid rgba(255,155,207,0.2);
       box-shadow: 0 8px 20px rgba(255,120,170,0.06);
       transition: all 0.3s ease;
+      flex-wrap: wrap;
     }
     
     .playlist .track:hover {
@@ -926,6 +937,7 @@
     
     .playlist .meta { 
       flex:1; 
+      min-width: 150px;
     }
     
     .playlist .meta .title { 
@@ -990,13 +1002,6 @@
       background-clip: text !important;
     }
 
-    .swal2-title::after {
-      content: " 🌸 🎀";
-      display: inline;
-      font-size: 28px;
-      margin-left: 12px;
-    }
-
     .swal2-html-container {
       color: var(--anime-text) !important;
       font-family: 'Nunito', sans-serif !important;
@@ -1035,11 +1040,6 @@
       transform: translateY(2px) !important;
       box-shadow: 0 8px 20px rgba(255, 100, 170, 0.25),
                   0 0 15px rgba(255, 155, 207, 0.3) !important;
-    }
-
-    .swal2-confirm::after {
-      content: ' ✨💖';
-      font-size: 22px;
     }
 
     .swal2-cancel {
@@ -1118,288 +1118,29 @@
     /* utilities */
     .hidden { display: none !important; }
 
-    /* RESPONSIVE FIXES - CRITICAL FOR ZODIAC TEXT */
-    @media (max-width: 1200px) {
-      .zodiac-display-box {
-        max-width: 140px;
-      }
-      
-      .zodiac-display-box strong {
-        font-size: 18px;
-      }
-    }
-    
-    @media (max-width: 992px) {
-      .devices {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      
-      .hero-halo {
-        height: 320px;
-      }
-      
-      .landing {
-        padding: 24px;
-      }
-      
-      .app {
-        padding: 16px;
-      }
-      
-      .title {
-        font-size: 28px;
-      }
-      
-      .zodiac-container {
-        margin-top: 15px;
-      }
-      
-      .monthly-quote-container {
-        margin-top: 15px;
-      }
-      
-      .zodiac-display-box {
-        max-width: 130px;
-        min-width: 110px;
-      }
-      
-      .zodiac-display-box strong {
-        font-size: 17px;
-      }
-    }
-    
+    /* RESPONSIVE MEDIA QUERIES */
     @media (max-width: 768px) {
-      .wrap {
-        padding: 20px;
-      }
-      
-      .card-ui, .app, .device {
-        border-radius: 20px;
-        padding: 16px;
-      }
-      
-      .hero-halo {
-        height: 280px;
-      }
-      
-      .bear-img {
-        width: 70%;
-        max-width: 280px;
-      }
-      
-      .title {
-        font-size: 24px;
-      }
-      
-      .subtitle {
-        font-size: 13px;
-        max-width: 90%;
-      }
-      
-      .result-badges {
-        flex-direction: column;
-        gap: 10px;
-      }
-      
-      .badge {
-        padding: 12px;
-      }
-      
-      .next-block {
-        flex-wrap: wrap;
-      }
-      
-      .app-top {
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-      }
-      
-      .brand {
-        width: 100%;
-        justify-content: space-between;
-      }
-      
-      .profile-sm {
-        margin-left: 0;
-        margin-top: 10px;
-      }
-      
-      .zodiac-container, 
-      .monthly-quote-container {
-        padding: 15px;
-        border-radius: 16px;
-      }
-      
-      .zodiac-sign {
-        font-size: 22px;
-      }
-      
-      .zodiac-fact {
-        font-size: 13px;
-      }
-      
-      .monthly-quote-text {
-        font-size: 14px;
-      }
-      
-      .btn-calc, 
-      .btn-back, 
-      input, 
-      .badge, 
-      .analytics {
-        border-radius: 14px;
-      }
-      
-      /* CRITICAL FIX FOR ZODIAC IN NOTEBOOK */
-      .notebook > div:last-child {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-      }
-      
-      .notebook > div:last-child > div:last-child {
-        text-align: left !important;
-        margin-top: 10px;
-      }
-      
-      .zodiac-display-box {
-        max-width: 100%;
-        min-width: 100%;
-        text-align: left;
-        margin-top: 10px;
-      }
-      
-      .zodiac-display-box strong {
-        font-size: 18px;
-        text-align: center;
-      }
+      .wrap { padding: 15px; }
+      .title { font-size: 28px; }
+      .hero-halo { height: 280px; }
+      .bear-img { width: 70%; }
+      .devices { grid-template-columns: 1fr; }
+      .app-top { flex-direction: column; align-items: flex-start; }
+      .brand { width: 100%; justify-content: space-between; }
+      .profile-sm { margin-left: 0; }
+      .result-badges { flex-direction: row; }
     }
     
-    @media (max-width: 576px) {
-      .wrap {
-        padding: 15px;
-      }
-      
-      .hero-halo {
-        height: 240px;
-      }
-      
-      .landing {
-        padding: 20px;
-        border-radius: 24px;
-      }
-      
-      .title {
-        font-size: 22px;
-      }
-      
-      .cta {
-        width: 60px;
-        height: 60px;
-        font-size: 22px;
-      }
-      
-      .player-controls .btn {
-        min-width: 44px;
-        height: 44px;
-        font-size: 18px;
-      }
-      
-      .btn-calc, .btn-back {
-        font-size: 16px;
-        padding: 14px;
-      }
-      
-      .zodiac-sign {
-        font-size: 20px;
-      }
-      
-      .zodiac-fact {
-        font-size: 12px;
-        line-height: 1.4;
-      }
-      
-      .monthly-quote-text {
-        font-size: 13px;
-        line-height: 1.5;
-      }
-      
-      .devices {
-        gap: 15px;
-      }
-      
-      .device {
-        padding: 15px;
-      }
-      
-      .small-btn {
-        font-size: 14px;
-        padding: 12px;
-      }
-      
-      .zodiac-display-box strong {
-        font-size: 16px;
-      }
-    }
-    
-    @media (max-width: 400px) {
-      .wrap {
-        padding: 12px;
-      }
-      
-      .hero-halo {
-        height: 200px;
-      }
-      
-      .title {
-        font-size: 20px;
-      }
-      
-      .card-ui, .app, .device {
-        padding: 12px;
-      }
-      
-      .zodiac-container,
-      .monthly-quote-container {
-        padding: 12px;
-      }
-      
-      .zodiac-sign {
-        font-size: 18px;
-      }
-      
-      .zodiac-fact {
-        font-size: 11px;
-      }
-      
-      .monthly-quote-text {
-        font-size: 12px;
-      }
-      
-      .small-btn {
-        font-size: 13px;
-        padding: 10px;
-      }
-      
-      .zodiac-display-box {
-        padding: 8px;
-      }
-      
-      .zodiac-display-box strong {
-        font-size: 15px;
-      }
-      
-      /* FIX FOR VERY SMALL SCREENS */
-      .notebook > div:last-child {
-        flex-direction: column;
-      }
-      
-      .notebook > div:last-child > div:first-child,
-      .notebook > div:last-child > div:last-child {
-        width: 100% !important;
-      }
+    @media (max-width: 480px) {
+      .wrap { padding: 10px; }
+      .title { font-size: 24px; }
+      .hero-halo { height: 220px; }
+      .bear-img { width: 80%; }
+      .badge .num { font-size: 20px; }
+      .next-block { flex-direction: column; }
+      .next-pill { width: 100%; }
+      .zodiac-display-box { margin-left: 0; margin-top: 10px; width: 100%; }
+      .player-controls .btn { min-width: 44px; height: 44px; }
     }
 
     /* confetti animation helpers */
@@ -1447,73 +1188,73 @@
         <img class="bear-img" src="assets/Bear.png" alt="cozy bear mascot">
       </div>
 
-      <h1 class="title">How Old Am I?</h1>
-      <p class="subtitle">Check your current age based upon your date of birth — aesthetic anime pink vibes with kawaii bear!</p>
+      <h1 class="title"><i class="bi bi-question-circle me-2"></i>How Old Am I?</h1>
+      <p class="subtitle"><i class="bi bi-heart-fill me-1"></i> Check your current age based upon your date of birth — aesthetic anime pink vibes with kawaii bear!</p>
 
       <div style="margin-top:18px">
         <button id="enterBtn" class="cta" title="Open app"><i class="bi bi-arrow-right-short" style="font-size:30px"></i></button>
       </div>
 
-      <p class="tiny-note">Anime-style pink aesthetic • Kawaii bear • Cozy magical UI</p>
+      <p class="tiny-note"><i class="bi bi-flower2 me-1"></i> Anime-style pink aesthetic <i class="bi bi-dot"></i> Kawaii bear <i class="bi bi-dot"></i> Cozy magical UI</p>
     </section>
 
     <!-- PAGE 1 -->
     <section id="page1" class="mb-4 hidden card-ui">
       <div class="inner-card">
-        <div class="d-flex align-items-center mb-4">
+        <div class="d-flex align-items-center mb-4 flex-wrap gap-2">
           <button id="backFromPage1" class="btn-back me-3"><i class="bi bi-arrow-left-circle-fill"></i> Back</button>
-          <h1 class="title mb-0">Hi cutie! 💖</h1>
+          <h1 class="title mb-0"><i class="bi bi-emoji-smile-fill me-2"></i>Hi cutie!</h1>
         </div>
 
-        <p class="subtitle">What's your name? And how old are you? (helps personalise your profile)</p>
+        <p class="subtitle"><i class="bi bi-pencil-fill me-1"></i> What's your name? And how old are you? (helps personalise your profile)</p>
 
-        <input id="userName" class="form-control" placeholder="Your sweet name ✨" />
+        <input id="userName" class="form-control" placeholder="Your sweet name" />
         <input id="userAge" type="number" class="form-control" placeholder="Your age (optional)" min="0" style="margin-top:12px;"/>
 
         <div class="d-flex gap-2 mt-4 justify-content-center">
-          <button id="goToPage2" class="btn-calc">Next <i class="bi bi-arrow-right-circle-fill ms-2"></i></button>
+          <button id="goToPage2" class="btn-calc"><i class="bi bi-arrow-right-circle-fill me-2"></i>Next</button>
         </div>
-        <div class="tiny-note mt-3">We keep things local — nothing is uploaded to a server. ✨</div>
+        <div class="tiny-note mt-3"><i class="bi bi-shield-lock-fill me-1"></i> We keep things local — nothing is uploaded to a server.</div>
       </div>
     </section>
 
     <!-- PAGE 2 -->
     <section id="page2" class="mb-4 hidden card-ui">
       <div class="inner-card">
-        <div class="d-flex align-items-center mb-3">
+        <div class="d-flex align-items-center mb-3 flex-wrap gap-2">
           <button id="backFromPage2" class="btn-back me-3"><i class="bi bi-arrow-left-circle-fill"></i> Back</button>
-          <h1 class="title mb-0">Upload your cute photo 🌸</h1>
+          <h1 class="title mb-0"><i class="bi bi-camera-fill me-2"></i>Upload your cute photo</h1>
         </div>
-        <p class="subtitle">Choose a profile picture (optional). We'll style it kawaii!</p>
+        <p class="subtitle"><i class="bi bi-image-fill me-1"></i> Choose a profile picture (optional). We'll style it kawaii!</p>
 
         <div class="file-picker mb-4" style="cursor: pointer;">
-          <div class="d-flex align-items-center gap-4">
+          <div class="d-flex align-items-center gap-4 flex-wrap">
             <div style="width:80px;height:80px;border-radius:18px;overflow:hidden;border:3px solid rgba(255,255,255,0.8);box-shadow:0 12px 30px rgba(255,100,170,0.15), 0 0 20px rgba(255,155,207,0.3);">
               <img id="previewThumb" src="assets/Bear.png" style="width:100%;height:100%;object-fit:cover"/>
             </div>
             <div style="text-align:left">
-              <div style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); font-size:18px;">Choose a cute photo ✨</div>
-              <div style="font-size:14px;color:var(--anime-muted)">Tap to pick — used locally only</div>
+              <div style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); font-size:18px;"><i class="bi bi-images me-1"></i>Choose a cute photo</div>
+              <div style="font-size:14px;color:var(--anime-muted)"><i class="bi bi-hand-index-thumb-fill me-1"></i>Tap to pick — used locally only</div>
             </div>
           </div>
           <input id="profilePicInput" type="file" accept="image/*" style="display: none;" />
         </div>
 
         <div class="d-flex gap-2 mt-4 justify-content-center">
-          <button id="goToMainApp" class="btn-calc">Continue <i class="bi bi-check-circle-fill ms-2"></i></button>
+          <button id="goToMainApp" class="btn-calc"><i class="bi bi-check-circle-fill me-2"></i>Continue</button>
         </div>
-        <div class="tiny-note mt-3">You can change your pic anytime from the app header. 💕</div>
+        <div class="tiny-note mt-3"><i class="bi bi-arrow-repeat me-1"></i> You can change your pic anytime from the app header.</div>
       </div>
     </section>
 
     <!-- APP -->
     <section id="app" class="app hidden" aria-hidden="true">
       <div class="app-top">
-        <div style="display:flex; align-items:center; gap:15px;">
+        <div style="display:flex; align-items:center; gap:15px; flex-wrap: wrap;">
           <button id="backFromApp" class="btn-back me-3"><i class="bi bi-arrow-left-circle-fill"></i> Back</button>
           <div class="brand">
-            <div class="logo-pill">CozyBear</div>
-            <div style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); font-size:20px;">Age Calculator</div>
+            <div class="logo-pill"><i class="bi bi-cup-hot-fill me-1"></i>CozyBear</div>
+            <div style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); font-size:20px;"><i class="bi bi-calculator-fill me-1"></i>Age Calculator</div>
           </div>
         </div>
         <div class="profile-sm" style="margin-left:auto">
@@ -1534,30 +1275,30 @@
                 <img id="miniAvatar" src="assets/Bear.png" alt="tiny bear" style="width:100%;height:100%;object-fit:cover">
               </div>
               <div>
-                <div class="name" id="profileName">Friend ✨</div>
-                <div class="sub">Welcome to Kawaii Age Calculator app 💕</div>
+                <div class="name" id="profileName"><i class="bi bi-star-fill me-1"></i>Friend</div>
+                <div class="sub"><i class="bi bi-heart-fill me-1"></i>Welcome to Kawaii Age Calculator app</div>
               </div>
             </div>
           </div>
 
           <div class="input-card">
-            <label class="small">Your Date of Birth 📅</label>
+            <label class="small"><i class="bi bi-calendar-heart-fill me-1"></i> Your Date of Birth</label>
             <input id="dob" type="date" />
           </div>
 
           <div class="input-card">
-            <label class="small">Today ✨</label>
+            <label class="small"><i class="bi bi-sun-fill me-1"></i> Today</label>
             <input id="today" type="date" />
           </div>
 
-          <button id="calculate" class="btn-calc">Calculate my age 🌸</button>
+          <button id="calculate" class="btn-calc"><i class="bi bi-calculator-fill me-2"></i>Calculate my age</button>
 
           <div class="input-card">
-            <div style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); margin-bottom:12px; font-size:18px;">Check other 💖</div>
+            <div style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); margin-bottom:12px; font-size:18px;"><i class="bi bi-question-circle-fill me-1"></i>Check other</div>
             <div style="display:grid;gap:10px">
-              <button id="daysUntilBtn" class="small-btn">How many days until my birthday? 🎂</button>
-              <button id="weekdayBtn" class="small-btn">What day I was born? 🌟</button>
-              <button id="todayAgeBtn" class="small-btn">How old am I today? 🎀</button>
+              <button id="daysUntilBtn" class="small-btn"><i class="bi bi-calendar2-week-fill me-2"></i>How many days until my birthday?</button>
+              <button id="weekdayBtn" class="small-btn"><i class="bi bi-calendar-day-fill me-2"></i>What day I was born?</button>
+              <button id="todayAgeBtn" class="small-btn"><i class="bi bi-clock-history me-2"></i>How old am I today?</button>
             </div>
           </div>
         </div>
@@ -1570,7 +1311,7 @@
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
               <div style="flex:1; min-width:200px;">
-                <div style="font-size:13px;color:var(--anime-muted); margin-bottom:10px;">You are (your age right now) ✨</div>
+                <div style="font-size:13px;color:var(--anime-muted); margin-bottom:10px;"><i class="bi bi-arrow-right-circle-fill me-1"></i>You are (your age right now)</div>
                 <div class="result-badges">
                   <div class="badge"><div class="num" id="years">--</div><div class="lbl">Years</div></div>
                   <div class="badge"><div class="num" id="months">--</div><div class="lbl">Months</div></div>
@@ -1578,9 +1319,9 @@
                 </div>
               </div>
 
-              <!-- ZODIAC DISPLAY - FIXED WITH SPECIAL CLASS -->
+              <!-- ZODIAC DISPLAY -->
               <div style="text-align:right; margin-top:10px;">
-                <div style="font-size:10px;color:var(--anime-muted); margin-bottom:8px;">Zodiac ✨</div>
+                <div style="font-size:10px;color:var(--anime-muted); margin-bottom:8px;"><i class="bi bi-stars me-1"></i>Zodiac</div>
                 <div class="zodiac-display-box">
                   <strong id="zodiac">—</strong>
                 </div>
@@ -1589,44 +1330,44 @@
           </div>
 
           <div class="analytics" id="analytics">
-            <div class="row"><div class="muted">Months old</div><div id="monthsOld">—</div></div>
-            <div class="row"><div class="muted">Weeks old</div><div id="weeksOld">—</div></div>
-            <div class="row"><div class="muted">Days old</div><div id="daysOld">—</div></div>
-            <div class="row"><div class="muted">Hours old (approx)</div><div id="hoursOld">—</div></div>
-            <div class="row"><div class="muted">Minutes old (approx)</div><div id="minutesOld">—</div></div>
-            <div class="row"><div class="muted">Seconds old (approx)</div><div id="secondsOld">—</div></div>
+            <div class="row"><div class="muted"><i class="bi bi-calendar-month me-1"></i>Months old</div><div id="monthsOld">—</div></div>
+            <div class="row"><div class="muted"><i class="bi bi-calendar-week me-1"></i>Weeks old</div><div id="weeksOld">—</div></div>
+            <div class="row"><div class="muted"><i class="bi bi-calendar-day me-1"></i>Days old</div><div id="daysOld">—</div></div>
+            <div class="row"><div class="muted"><i class="bi bi-clock me-1"></i>Hours old (approx)</div><div id="hoursOld">—</div></div>
+            <div class="row"><div class="muted"><i class="bi bi-clock-history me-1"></i>Minutes old (approx)</div><div id="minutesOld">—</div></div>
+            <div class="row"><div class="muted"><i class="bi bi-stopwatch me-1"></i>Seconds old (approx)</div><div id="secondsOld">—</div></div>
           </div>
 
           <!-- ZODIAC DETAILS DISPLAY -->
           <div class="zodiac-container" id="zodiacDetails">
             <div class="zodiac-title">
               <i class="bi bi-stars" style="color: var(--anime-pink-3);"></i>
-              Your Zodiac Sign ✨
+              Your Zodiac Sign
             </div>
             <div class="zodiac-sign" id="zodiacSignDisplay">—</div>
-            <p class="zodiac-fact" id="zodiacFactDisplay">Select your date of birth to discover your zodiac sign! 🌟</p>
+            <p class="zodiac-fact" id="zodiacFactDisplay"><i class="bi bi-chat-quote-fill me-1"></i>Select your date of birth to discover your zodiac sign!</p>
           </div>
 
           <!-- MONTHLY QUOTE DISPLAY -->
           <div class="monthly-quote-container" id="monthlyQuoteDisplay">
             <div class="monthly-quote-title">
               <i class="bi bi-calendar-heart-fill" style="color: var(--anime-pink-3);"></i>
-              Your Birth Month Quote 🌸
+              Your Birth Month Quote
             </div>
-            <p class="monthly-quote-text" id="monthlyQuoteText">Select your date of birth to see your special monthly quote! 💕</p>
+            <p class="monthly-quote-text" id="monthlyQuoteText"><i class="bi bi-quote me-1"></i>Select your date of birth to see your special monthly quote!</p>
           </div>
 
           <div class="next-block">
-            <div class="next-pill"><strong id="nextMonths">--</strong><div class="muted tiny">Months</div></div>
-            <div class="next-pill" style="background:linear-gradient(180deg, rgba(255,247,246,0.95), rgba(255,247,251,0.95))"><strong id="nextDays">--</strong><div class="muted tiny">Days</div></div>
-            <div style="margin-left:auto"><small id="nextWeekday" class="muted">—</small></div>
+            <div class="next-pill"><strong id="nextMonths">--</strong><div class="muted tiny"><i class="bi bi-calendar-month me-1"></i>Months</div></div>
+            <div class="next-pill" style="background:linear-gradient(180deg, rgba(255,247,246,0.95), rgba(255,247,251,0.95))"><strong id="nextDays">--</strong><div class="muted tiny"><i class="bi bi-calendar-day me-1"></i>Days</div></div>
+            <div style="margin-left:auto"><small id="nextWeekday" class="muted"><i class="bi bi-calendar2-week me-1"></i>—</small></div>
           </div>
 
-          <div class="small-note">Tip: click "Calculate my age" after picking your DOB. The UI is magical and mobile-friendly. ✨</div>
+          <div class="small-note"><i class="bi bi-lightbulb-fill me-1"></i> Tip: click "Calculate my age" after picking your DOB. The UI is magical and mobile-friendly.</div>
 
           <!-- Birthday area with YouTube player & playlist -->
           <div id="birthdayArea" style="display:none;margin-top:20px;text-align:center;">
-            <h3 style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); font-weight:400; background: linear-gradient(135deg, #FF61BD, #FF9BCF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom:15px;">Birthday Mode 🎉</h3>
+            <h3 style="font-family:'Mochiy Pop P One', cursive; color:var(--anime-text); font-weight:400; background: linear-gradient(135deg, #FF61BD, #FF9BCF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom:15px;"><i class="bi bi-gift-fill me-2"></i>Birthday Mode</h3>
             <p id="zodiacFact" style="font-size:15px;color:var(--anime-text);margin-bottom:15px; font-family:'Nunito', sans-serif;"></p>
 
             <!-- YouTube Player Container -->
@@ -1648,13 +1389,13 @@
 
             <div class="mt-3" style="display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap">
               <label class="d-flex align-items-center gap-2" style="font-size:14px; font-family:'Nunito', sans-serif;">
-                <input id="autoplayToggle" type="checkbox" style="accent-color: var(--anime-pink-3);"> Auto-play on birthday
+                <input id="autoplayToggle" type="checkbox" style="accent-color: var(--anime-pink-3);"> <i class="bi bi-play-circle-fill"></i> Auto-play on birthday
               </label>
-              <label style="font-size:14px; font-family:'Nunito', sans-serif;">Choose song:
+              <label style="font-size:14px; font-family:'Nunito', sans-serif;"><i class="bi bi-music-note-beamed me-1"></i>Choose song:
                 <select id="playlistSelect" class="form-select form-select-sm" style="width:auto;display:inline-block;margin-left:8px; border:2px solid rgba(255,155,207,0.3); border-radius:10px; font-family:'Nunito', sans-serif;">
-                  <option value="vTL57Sie1Fo">🎂 Birthday Party Song 1</option>
-                  <option value="5u4xTa3LR2U">🎉 Birthday Party Song 2</option>
-                  <option value="_z-1fTlSDF0">💃 Birthday Party Song 3</option>
+                  <option value="vTL57Sie1Fo"><i class="bi bi-music-note"></i> Birthday Party Song 1</option>
+                  <option value="5u4xTa3LR2U"><i class="bi bi-music-note"></i> Birthday Party Song 2</option>
+                  <option value="_z-1fTlSDF0"><i class="bi bi-music-note"></i> Birthday Party Song 3</option>
                 </select>
               </label>
             </div>
@@ -1684,9 +1425,9 @@
      Configuration & Utilities
      =========================== */
   const YT_PLAYLIST_DEFAULT = [
-    { id: 'vTL57Sie1Fo', title: '🎂 Birthday Party Song 1' },
-    { id: '5u4xTa3LR2U', title: '🎉 Birthday Party Song 2' },
-    { id: '_z-1fTlSDF0', title: '💃 Birthday Party Song 3' }
+    { id: 'vTL57Sie1Fo', title: 'Birthday Party Song 1' },
+    { id: '5u4xTa3LR2U', title: 'Birthday Party Song 2' },
+    { id: '_z-1fTlSDF0', title: 'Birthday Party Song 3' }
   ];
 
   function parseDateInput(value){
@@ -1819,13 +1560,11 @@
 
   function addButtonAnimation(button) {
     button.addEventListener('click', function(e) {
-      // Gentle bounce animation
       this.classList.add('animate-gentle');
       setTimeout(() => {
         this.classList.remove('animate-gentle');
       }, 600);
       
-      // Create sparkles
       const rect = this.getBoundingClientRect();
       for(let i = 0; i < 5; i++) {
         setTimeout(() => {
@@ -1837,7 +1576,6 @@
     });
   }
 
-  // Add animations to all buttons
   document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('button, .btn, .btn-calc, .cta, .btn-back, .play-link, .small-btn');
     buttons.forEach(button => {
@@ -1868,7 +1606,7 @@
     const name = (userNameInput.value||'').trim();
     const age = (document.getElementById('userAge').value||'').trim();
     if(!name){
-      cozyAlert('Hey cutie! 💖', 'Please tell me your name so I can personalise your profile ✨', 'info');
+      cozyAlert('Hey cutie!', 'Please tell me your name so I can personalise your profile', 'info');
       return;
     }
     sessionStorage.setItem('cozy_name', name);
@@ -1884,7 +1622,6 @@
     page1.scrollIntoView({behavior:'smooth'});
   });
 
-  // Profile picture click to choose
   document.querySelector('.file-picker').addEventListener('click', ()=>{
     profilePicInput.click();
   });
@@ -1901,7 +1638,7 @@
 
   goToMainApp.addEventListener('click', ()=>{
     const name = sessionStorage.getItem('cozy_name') || 'Friend';
-    profileNameEl.textContent = name + ' ✨';
+    profileNameEl.textContent = name;
     const storedPic = sessionStorage.getItem('cozy_profilePic');
     if(storedPic){
       headerAvatar.src = storedPic;
@@ -1922,16 +1659,13 @@
     window.scrollTo({top:0,behavior:'smooth'});
   });
 
-  /* ===========================
-     Render / calculate
-     =========================== */
   calculateBtn.addEventListener('click', render);
 
   function render(){
     const dob = parseDateInput(dobInput.value);
     const today = parseDateInput(todayInput.value) || new Date();
-    if(!dob){ cozyAlert('Oops! 🌸', 'Please select your date of birth.', 'warning'); return; }
-    if(dob > today){ cozyAlert('Hmm... 💭', 'Date of birth cannot be in the future.', 'error'); return; }
+    if(!dob){ cozyAlert('Oops!', 'Please select your date of birth.', 'warning'); return; }
+    if(dob > today){ cozyAlert('Hmm...', 'Date of birth cannot be in the future.', 'error'); return; }
     const a = analytics(dob,today);
     if(!a) return;
     
@@ -1939,7 +1673,6 @@
     monthsEl.textContent = a.diff.months;
     daysEl.textContent = a.diff.days;
     
-    // ZODIAC DISPLAY - FIXED
     const zodiac = zodiacSign(dob);
     zodiacEl.textContent = zodiac;
     zodiacSignDisplay.textContent = zodiac;
@@ -1955,7 +1688,6 @@
     nextDaysEl.textContent = a.daysToNext;
     nextWeekdayEl.textContent = a.weekdayNext + ' (next)';
 
-    // Animate result badges
     [yearsEl,monthsEl,daysEl].forEach(el=>{
       try{ 
         el.parentElement.parentElement.animate([
@@ -1966,7 +1698,6 @@
       }catch(e){}
     });
 
-    // Animate zodiac display
     zodiacSignDisplay.animate([
       { transform: 'scale(1)', opacity: 1 },
       { transform: 'scale(1.2)', opacity: 0.9 },
@@ -1979,7 +1710,6 @@
     
     monthlyQuoteText.textContent = `You were born in ${monthName}. ${quote}`;
 
-    // Animate monthly quote
     monthlyQuoteText.animate([
       { opacity: 0, transform: 'translateY(15px)' },
       { opacity: 1, transform: 'translateY(0)' }
@@ -1988,46 +1718,43 @@
     checkBirthday(dob);
   }
 
-  // Add click animations to extra buttons
   document.getElementById('daysUntilBtn').addEventListener('click', ()=>{
-    const dob = parseDateInput(dobInput.value); if(!dob) return cozyAlert('Select DOB 🌸','Select your DOB first ✨','info');
+    const dob = parseDateInput(dobInput.value); if(!dob) return cozyAlert('Select DOB','Select your DOB first','info');
     const today = parseDateInput(todayInput.value) || new Date();
     const a = analytics(dob,today);
     if(!a) return;
-    cozyAlert('Days until next birthday 🎂', a.daysToNext + ' day(s) until your special day! ✨', 'info');
+    cozyAlert('Days until next birthday', a.daysToNext + ' day(s) until your special day!', 'info');
   });
   
   document.getElementById('weekdayBtn').addEventListener('click', ()=>{
-    const dob = parseDateInput(dobInput.value); if(!dob) return cozyAlert('Select DOB 🌸','Select your DOB first ✨','info');
-    cozyAlert('You were born on ✨', dob.toLocaleDateString(undefined,{weekday:'long'}) , 'info');
+    const dob = parseDateInput(dobInput.value); if(!dob) return cozyAlert('Select DOB','Select your DOB first','info');
+    cozyAlert('You were born on', dob.toLocaleDateString(undefined,{weekday:'long'}) , 'info');
   });
   
   document.getElementById('todayAgeBtn').addEventListener('click', ()=>{
     render();
-    cozyAlert('Your Age ✨', yearsEl.textContent + ' years, ' + monthsEl.textContent + ' months, ' + daysEl.textContent + ' days', 'success');
+    cozyAlert('Your Age', yearsEl.textContent + ' years, ' + monthsEl.textContent + ' months, ' + daysEl.textContent + ' days', 'success');
   });
-
 
   (function(){
     const min='1900-01-01'; const max=new Date().toISOString().slice(0,10);
     dobInput.setAttribute('min',min); dobInput.setAttribute('max',max);
   })();
 
- 
   const zodiacFunFact = {
-    Aries: "♈ Aries people are energetic and full of fire! You're a natural leader with passion. 🔥",
-    Taurus: "♉ Taureans love comfort, food, and soft cozy vibes. You're reliable and grounded. 🌸",
-    Gemini: "♊ Geminis are cute chatterboxes with dual charm. You're adaptable and curious. ✨",
-    Cancer: "♋ Cancers are emotional sweethearts with big hearts. You're nurturing and intuitive. 💕",
-    Leo: "♌ Leos shine brighter than confetti. You're confident and love being in the spotlight. 👑",
-    Virgo: "♍ Virgos are detail lovers & perfection cuties. You're analytical and practical. 📚",
-    Libra: "♎ Libras are aesthetic queens/kings. You're diplomatic and love harmony. ⚖️",
-    Scorpio: "♏ Scorpios are passionate mysterious beauties. You're intense and transformative. 🦂",
-    Sagittarius: "♐ Sags love adventures and chaos. You're optimistic and philosophical. 🏹",
-    Capricorn: "♑ Capricorns are disciplined teddy bears. You're ambitious and responsible. 🐻",
-    Aquarius: "♒ Aquarians are unique aliens of creativity. You're innovative and humanitarian. 🌟",
-    Pisces: "♓ Pisces are dreamy soft hearts. You're compassionate and artistic. 🎨",
-    "—": "✨ Cute human — no zodiac yet! Please select your date of birth. 🌸"
+    Aries: "♈ Aries people are energetic and full of fire! You're a natural leader with passion.",
+    Taurus: "♉ Taureans love comfort, food, and soft cozy vibes. You're reliable and grounded.",
+    Gemini: "♊ Geminis are cute chatterboxes with dual charm. You're adaptable and curious.",
+    Cancer: "♋ Cancers are emotional sweethearts with big hearts. You're nurturing and intuitive.",
+    Leo: "♌ Leos shine brighter than confetti. You're confident and love being in the spotlight.",
+    Virgo: "♍ Virgos are detail lovers & perfection cuties. You're analytical and practical.",
+    Libra: "♎ Libras are aesthetic queens/kings. You're diplomatic and love harmony.",
+    Scorpio: "♏ Scorpios are passionate mysterious beauties. You're intense and transformative.",
+    Sagittarius: "♐ Sags love adventures and chaos. You're optimistic and philosophical.",
+    Capricorn: "♑ Capricorns are disciplined teddy bears. You're ambitious and responsible.",
+    Aquarius: "♒ Aquarians are unique aliens of creativity. You're innovative and humanitarian.",
+    Pisces: "♓ Pisces are dreamy soft hearts. You're compassionate and artistic.",
+    "—": "✨ Cute human — no zodiac yet! Please select your date of birth."
   };
   
   const monthNames = {
@@ -2046,23 +1773,20 @@
   };
   
   const monthQuote = {
-    0: "🌸 January: New year, new magical goals. Wrap yourself in warm anime vibes.",
-    1: "💖 February: Hearts & pastel dreams — be gentle with your beautiful self.",
-    2: "✨ March: Spring whispers magical secrets — small steps, big kawaii smiles.",
-    3: "🌷 April: Bloom like a pink sakura blossom; you are growing beautifully.",
-    4: "🌼 May: Soft sunlight & steady joy — you deserve all the anime magic.",
-    5: "🌞 June: Summer giggles and lazy magical afternoons. Relax, cutie!",
-    6: "🌟 July: Bright days, brighter you — sparkle a little more today.",
-    7: "🌻 August: Sun-kissed and sweet — chase tiny magical adventures.",
-    8: "🍂 September: Cozy routines & warm drinks — comfort reigns supreme.",
-    9: "🎃 October: Pumpkin spice and soft blankets — hug your magical self.",
-    10: "🍁 November: Gentle reflections — you're precisely where you need to be in this anime world.",
-    11: "🎄 December: Candles, twinkles, and soft magical celebration."
+    0: "January: New year, new magical goals. Wrap yourself in warm anime vibes.",
+    1: "February: Hearts & pastel dreams — be gentle with your beautiful self.",
+    2: "March: Spring whispers magical secrets — small steps, big kawaii smiles.",
+    3: "April: Bloom like a pink sakura blossom; you are growing beautifully.",
+    4: "May: Soft sunlight & steady joy — you deserve all the anime magic.",
+    5: "June: Summer giggles and lazy magical afternoons. Relax, cutie!",
+    6: "July: Bright days, brighter you — sparkle a little more today.",
+    7: "August: Sun-kissed and sweet — chase tiny magical adventures.",
+    8: "September: Cozy routines & warm drinks — comfort reigns supreme.",
+    9: "October: Pumpkin spice and soft blankets — hug your magical self.",
+    10: "November: Gentle reflections — you're precisely where you need to be in this anime world.",
+    11: "December: Candles, twinkles, and soft magical celebration."
   };
 
-  /* ===========================
-     Birthday detection, confetti
-     =========================== */
   let birthdayModeActive = false;
   function checkBirthday(dob){
     const today = new Date();
@@ -2081,8 +1805,8 @@
     const name = sessionStorage.getItem('cozy_name') || 'Friend';
 
     Swal.fire({
-      title: `Happy Birthday, ${name}! 🎉`,
-      html: `<div style="margin-top:10px; font-size:18px;">Wishing you a magical anime day — play party music and enjoy the sparkles! ✨</div>`,
+      title: `Happy Birthday, ${name}!`,
+      html: `<div style="margin-top:10px; font-size:18px;">Wishing you a magical anime day — play party music and enjoy the sparkles!</div>`,
       icon: 'success',
       showCancelButton: true,
       confirmButtonText: '<i class="bi bi-play-fill"></i> Play Party Music',
@@ -2100,19 +1824,15 @@
       if(res.isConfirmed){
         const selectedSong = playlistSelect.value || 'vTL57Sie1Fo';
         loadYouTubeVideo(selectedSong);
-      } else {
-        // Just show confetti
       }
     });
   }
 
-  // SIMPLE YOUTUBE PLAYER FUNCTION
   function loadYouTubeVideo(videoId) {
     const playerUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
     youtubePlayer.src = playerUrl;
   }
 
-  // Change song when dropdown changes
   playlistSelect.addEventListener('change', function() {
     const videoId = this.value;
     if (birthdayModeActive) {
@@ -2120,10 +1840,7 @@
     }
   });
 
-  // Control buttons
   playBtn.addEventListener('click', () => {
-    // For simple iframe, we can't control playback directly
-    // So we reload with autoplay
     const currentSrc = youtubePlayer.src;
     if (currentSrc.includes('autoplay=0')) {
       youtubePlayer.src = currentSrc.replace('autoplay=0', 'autoplay=1');
@@ -2133,7 +1850,6 @@
   });
 
   pauseBtn.addEventListener('click', () => {
-    // For simple iframe, we reload without autoplay
     const currentSrc = youtubePlayer.src;
     youtubePlayer.src = currentSrc.replace('autoplay=1', 'autoplay=0');
   });
@@ -2158,7 +1874,6 @@
     stopConfetti();
     birthdayArea.style.display = 'none';
     birthdayModeActive = false;
-    // Stop YouTube playback by reloading without autoplay
     youtubePlayer.src = youtubePlayer.src.replace('autoplay=1', 'autoplay=0');
   });
 
@@ -2172,6 +1887,7 @@
       if(Date.now() - start > duration){ clearInterval(confettiInterval); confettiInterval=null; }
     }, 200);
   }
+  
   function spawnConfettiBurst(){
     const colors = ['#FFB6D9','#FF9BCF','#FF7EC6','#FF61BD','#D8B4FF','#E9D7FF','#FFFFFF'];
     for(let i=0;i<25;i++){
@@ -2196,12 +1912,12 @@
       setTimeout(()=> elem.remove(), dur+100);
     }
   }
+  
   function stopConfetti(){
     if(confettiInterval){ clearInterval(confettiInterval); confettiInterval = null; }
     document.querySelectorAll('.confetti').forEach(n=>n.remove());
   }
 
-  /* Populate nice playlist view */
   function populatePlaylistView(){
     playlistView.innerHTML = '';
     YT_PLAYLIST_DEFAULT.forEach((t, idx)=>{
@@ -2221,7 +1937,6 @@
     });
     playlistView.setAttribute('aria-hidden','false');
 
-    // attach play handlers
     document.querySelectorAll('.play-link').forEach(btn=>{
       btn.addEventListener('click', (e)=>{
         const id = e.currentTarget.getAttribute('data-id');
@@ -2231,9 +1946,6 @@
     });
   }
 
-  /* ===========================
-     Storage & niceties
-     =========================== */
   document.addEventListener('DOMContentLoaded', ()=>{
     const storedPic = sessionStorage.getItem('cozy_profilePic');
     if(storedPic){
@@ -2243,7 +1955,7 @@
     }
     const storedName = sessionStorage.getItem('cozy_name');
     if(storedName){
-      profileNameEl.textContent = storedName + ' ✨';
+      profileNameEl.textContent = storedName;
       userNameInput.value = storedName;
     }
     hideAllPages();
@@ -2254,7 +1966,6 @@
   profilePicInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') goToMainApp.click(); });
   dobInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') calculateBtn.click(); });
 
-  /* Cozy SweetAlert helper */
   function cozyAlert(title, text, type){
     const icon = (type === 'error' || type === 'warning' || type === 'info' || type === 'success') ? type : 'info';
     Swal.fire({ 
@@ -2265,12 +1976,11 @@
       background:'linear-gradient(135deg, rgba(255,245,252,0.98), rgba(255,235,248,0.95))', 
       customClass:{popup:'swal-cozy'},
       showConfirmButton: true,
-      confirmButtonText: 'OK! ✨',
+      confirmButtonText: '<i class="bi bi-check-circle-fill me-1"></i>OK!',
       showCancelButton: false
     });
   }
 
-  /* Expose small API */
   window.cozy = {
     showLanding: ()=>{ hideAllPages(); landing.classList.remove('hidden'); }
   };
